@@ -3,17 +3,30 @@
         {
             "name": "Fertilizer A",
             "N": 0.5,
-            "PCG": 0.2
+            "PCG": 0.2,
+            "gases": [
+                {
+                    "name": "CO2"
+                },
+                {
+                    "name": "N2"
+                },
+                {
+                    "name": "O2"
+                }
+            ]
         },
         {
             "name": "Fertilizer B",
             "N": 0.8,
-            "PCG": 0.4
+            "PCG": 0.4,
+            "gases": []
         },
         {
             "name": "Fertilizer C",
             "N": 0.3,
-            "PCG": 0.1
+            "PCG": 0.1,
+            "gases": []
         }
     ]
 }

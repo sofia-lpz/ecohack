@@ -1,4 +1,5 @@
 import * as fertexMysql from './fertex.mysql.js'
+import * as fertexJson from './fertex.json.js'
 
 const getCarreras = async () => {
   try {
@@ -40,12 +41,14 @@ const getCarreraSemestre = async (carrera, semestre) => {
 
 const getCO2 = async (fertilizer, kg) => {
   try {
-    const N = await fertexMysql.getN(fertilizer);
-    const PCG = await fertexMysql.getPCG(fertilizer);
-    const num_gases = await fertexMysql.getNumGases(fertilizer);
+    const gases = await fertexJson.getGases(fertilizer);
+    const num_gases = gases.length;
     const co2 = 0;
 
     for (let i = 0; i < num_gases; i++) {
+    const N = await fertexJson.getN(fertilizer);
+    const PCG = await fertexJson.getPCG(fertilizer);
+
       co2pergas = kg * N * PCG;
       co2 += co2pergas;
     }
@@ -57,8 +60,5 @@ const getCO2 = async (fertilizer, kg) => {
 }
 
 export {
-  getCarreras,
-  getAlumno,
-  getCarreraSemestre,
-  getAlumnoActual
+getCO2
 };
