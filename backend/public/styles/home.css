@@ -1,0 +1,75 @@
+
+/*blue rgba(84,146,205,255)*/
+:root {
+    --blue: rgba(84, 146, 205, 255);
+    --white-transparent: rgba(255, 255, 255, 0.95);
+    --blue-transparent:  rgba(84, 146, 205, 0.95);
+    --background: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 35px;
+    color: white;
+    padding-left: 50px;
+    padding-right: 200px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--blue-transparent);
+    padding: 10px;
+    text-align: center;
+    color: var(--background);
+    display: flex;
+    align-items: center;
+}
+
+p {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    background-image: url("../images/bg_white.jpg");
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: rgba(84,146,205,255);
+    padding-top: 100px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.header-button {
+    margin-left: 60px; /* Adjust this value to increase or decrease the space */
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--blue);
+    
+    text-align: left;
+    color: var(--background);
+    display: flex;
+    align-items: center;
+}

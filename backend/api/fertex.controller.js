@@ -1,4 +1,4 @@
-import * as pronosService from './ipcc.service.js'
+import * as fertexService from './fertex.service.js'
 
 const getCarreras = async (req, res) => {
   try {
@@ -64,9 +64,23 @@ catch(error){
 }
 };
 
+const getCO2 = async (req, res) => {
+  const {
+    params: { fertilizer, kg },
+  } = req;
+  if (!fertilizer || !kg) {
+    return;
+  }
+
+  try {
+    const co2 = await fertexService.getCO2(fertilizer, kg);
+    res.send({ status: "OK", data: co2 });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ status: "Error", data: error.message });
+  }
+}
+
 export {
-  getCarreras,
-  getAlumno,
-  getCarreraSemestre,
-  getAlumnoActual,
+  getCO2
 };

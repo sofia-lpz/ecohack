@@ -1,0 +1,19 @@
+{
+    "fertilizers": [
+        {
+            "name": "Fertilizer A",
+            "N": 0.5,
+            "PCG": 0.2
+        },
+        {
+            "name": "Fertilizer B",
+            "N": 0.8,
+            "PCG": 0.4
+        },
+        {
+            "name": "Fertilizer C",
+            "N": 0.3,
+            "PCG": 0.1
+        }
+    ]
+}

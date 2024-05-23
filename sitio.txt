@@ -17,3 +17,19 @@ Examples
 
 
 Credits
+
+
+
+
+pages:
+
+about ipcc (importance of ipcc and climate chaneg)
+about the api (how we calculated data)
+
+
+for developers
+examples of api use
+
+for buisnesses
+examples of data use
+get a cvs and use it in your favourite
