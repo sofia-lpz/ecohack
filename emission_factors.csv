@@ -1,0 +1,10 @@
+Emission factor,Default value,Uncertainty range
+"EF1 for N additions from mineral fertilisers, organic amendments and crop residues, and N mineralised from mineral soil as a result of loss of soil carbon [kg N2O-N (kg N)-1]",0.01,0.003 - 0.03
+EF1FR for flooded rice fields [kg N2O-N (kg N)-1],0.003,0.000 - 0.006
+"EF2CG, Temp for temperate organic crop and grassland soils (kg N2O-N ha-1)",8.0,2 - 24
+"EF2CG, Trop for tropical organic crop and grassland soils (kg N2O-N ha-1)",16.0,5 - 48
+"EF2F, Temp, Org, R for temperate and boreal organic nutrient rich forest soils (kg N2O-N ha-1)",0.6,0.16 - 2.4
+"EF2F, Temp, Org, P for temperate and boreal organic nutrient poor forest soils (kg N2O-N ha-1)",0.1,0.02 - 0.3
+"EF2F, Trop for tropical organic forest soils (kg N2O-N ha-1)",8.0,0 - 24
+"EF3PRP, CPP for cattle (dairy, non-dairy and buffalo), poultry and pigs [kg N2O-N (kg N)-1]",0.02,0.007 - 0.06
+"EF3PRP, SO for sheep and 'other animals' [kg N2O-N (kg N)-1]",0.01,0.003 - 0.03
