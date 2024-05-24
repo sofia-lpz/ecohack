@@ -24,7 +24,6 @@ create table emissionFactor{
     emissionFactor FLOAT,
     gases VARCHAR(255)
 };
-}
 
 
 -- Inserting data into the historicEmissions table
