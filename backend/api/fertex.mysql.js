@@ -136,7 +136,7 @@ async function getCountryYearRange(country, yearstart, yearend)
   {
     connection = await connectToDB()
 
-    const query = `SELECT emissionsKTCO2 as total_emissions
+    const query = `SELECT emissionsKTCO2, year
 FROM historicEmissions
 WHERE country = ? AND year BETWEEN ? AND ?
 `;
