@@ -17,7 +17,7 @@ a {
 
 h1 {
     font-size: 35px;
-    color: white;
+    color: var(--blue);
 }
 
 .header {
@@ -58,7 +58,7 @@ body {
 .cloud_body{
     padding-top: 60px;
     background-color: #f1f1f1;
-    background-image: url("../images/bg_white.jpg");
+    background-image: url("../images/bg_white2.png");
 }
 
 .darkcloud_body{
@@ -109,14 +109,14 @@ html {
     font-size: 50px;
     font-weight: bold;
     padding-left: 20px;
-    color: white;
+    color: var(--blue);
 }
 
 .content-title-left {
     font-size: 50px;
     font-weight: bold;
     padding-left: 20px;
-    color: white;
+    color: var(--blue);
     margin-left : 50px;
 }
 
@@ -124,7 +124,7 @@ html {
         font-size: 30px;
         font-weight: bold;
         text-align: center;
-        color: white;
+        color: var(--blue);
 }
 
 .content{
@@ -161,7 +161,7 @@ html {
     font-size: 20px;
     padding-left: 50px;
     padding-right: 50px;
-    color: white;
+    color: var(--blue);
 }
 
 .logo {
