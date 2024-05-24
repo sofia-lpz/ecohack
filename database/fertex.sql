@@ -2,32 +2,20 @@ DROP DATABASE IF EXISTS fertex;
 CREATE DATABASE fertex;
 USE fertex;
 
-CREATE TABLE fertilizer (
+CREATE TABLE n2oData (
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255),
-    emissionFactor FLOAT,
-    gases VARCHAR(255),
-    PRIMARY KEY (id)
+    GWP FLOAT Default 273,
+    EF FLOAT Default 0.01,
+    primary key (id)
 );
 
 CREATE TABLE historicEmissions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT,
     category VARCHAR(255),
     year INT,
     emissionsKTCO2 FLOAT,
-    country VARCHAR(255)
+    country VARCHAR(255),
+    PRIMARY KEY (id)
 );
 
-create table emissionFactor{
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255),
-    emissionFactor FLOAT,
-    gases VARCHAR(255)
-};
-
-
--- Inserting data into the historicEmissions table
-INSERT INTO historicEmissions (year, emissionsKTCO2, country) VALUES
-('2000', 10000, 'mexico'),
-('2001', 15000, 'usa'),
-('2002', 20000, 'canada');
+INSERT INTO n2oData (GWP, EF) VALUES (273, 0.01);

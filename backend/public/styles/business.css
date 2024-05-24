@@ -2,6 +2,7 @@
     --blue: rgba(84, 146, 205, 255);
     --white-transparent: rgba(255, 255, 255, 0.95);
     --blue-transparent: rgba(84, 146, 205, 0.95);
+    --black-transparent: rgba(0, 0, 0, 0.60);
     --background: #f1f1f1;
 }
 
@@ -23,7 +24,7 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--blue-transparent);
+    background-color: var(--blue);
     padding: 10px;
     text-align: center;
     color: var(--background);
@@ -231,7 +232,7 @@ html {
 }
 
 .container {
-    background-color: var(--blue-transparent);
+    background-color: var(--black-transparent);
     padding: 20px;
     margin: 20px;
     border-radius: 10px;

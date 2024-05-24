@@ -11,7 +11,33 @@ async function connectToDB() {
   });
 }
 
+async function getCalculate(fertilizer, nitrogen)
+{
+  let connection = null
+  try
+  {
+    connection = await connectToDB()
 
+const query = `SELECT EF, GWP FROM n2oData`;
+
+    const [results, _] = await connection.query(query)
+
+    console.log(`${results.length} rows returned`)
+    return results
+  }
+  catch(error)
+  {
+    console.log(error)
+  }
+  finally
+  {
+    if(connection !== null)
+    {
+      connection.end()
+      console.log('Connection closed successfully')
+    }
+  }
+}
 
 async function getCountryYear(country, year)
 {
@@ -134,6 +160,7 @@ WHERE country = ? AND year BETWEEN ? AND ?
 }
 
 export {
+  getCalculate,
   getCountryYear,
   getYear,
   getYearRange,

@@ -1,16 +1,16 @@
 import * as fertexService from './fertex.service.js'
 
-const getCO2 = async (req, res) => {
+const getCalculate = async (req, res) => {
   const {
-    params: { fertilizer, kg },
+    params: { fertilizer, nitrogen },
   } = req;
-  if (!fertilizer || !kg) {
+  if (!fertilizer || !nitrogen) {
     return;
   }
 
   try {
-    const co2 = await fertexService.getCO2(fertilizer, kg);
-    res.send({ status: "OK", data: co2 });
+    const result = await fertexService.getCalculate(fertilizer, nitrogen);
+    res.send({ status: "OK", data: result });
   } catch (error) {
     console.error(error);
     res.status(500).send({ status: "Error", data: error.message });
@@ -86,7 +86,7 @@ const getCountryYearRange = async (req, res) => {
 }
 
 export {
-  getCO2,
+  getCalculate,
   getCountryYear,
   getYear,
   getYearRange,

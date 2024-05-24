@@ -1,21 +1,14 @@
 import * as fertexMysql from './fertex.mysql.js'
 
-
-const getCO2 = async (fertilizer, kg) => {
+const getCalculate = async (fertilizer, nitrogen) => {
   try {
-    const gases = await fertexJson.getGases(fertilizer);
-    const num_gases = gases.length;
-    const co2 = 0;
-
-    for (let i = 0; i < num_gases; i++) {
-    const N = await fertexJson.getN(fertilizer);
-    const PCG = await fertexJson.getPCG(fertilizer);
-
-      co2pergas = kg * N * PCG;
-      co2 += co2pergas;
+    const results = await fertexMysql.getCalculate(fertilizer, nitrogen);
+    if (results && results.length > 0) {
+      const { EF, GWP } = results[0];
+      return fertilizer * nitrogen * EF * GWP;
+    } else {
+      throw new Error('No results from database');
     }
-
-    return co2;
   } catch (err) {
     console.error(err);
   }
@@ -58,7 +51,7 @@ const getCountryYearRange = async (country, yearstart, yearend) => {
 }
 
 export {
-  getCO2,
+  getCalculate,
   getCountryYear,
   getYear,
   getYearRange,
