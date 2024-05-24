@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Fertex</title>
+    <link rel="stylesheet" href="./styles/developers.css">
+</head>
+<body class="darkcloud_body">
+    <div class="header">
+        <a href="/" class="header-title-link">
+            <h1 class="header-title">Fertex API</h1>
+        </a>
+        <a href="/about" class="header-button">About</a>
+        <a href="/business" class="header-button">For Businesses</a>
+        <a href="/developers" class="header-button">For Developers</a>
+    </div>
+
+    <div class="container">
+        <p class="code"> /api/calculate/:fertilizer/:nitrogen</p>
+    </div>
+
+
+
+    request:
+    get /calcuator/{fertilizer}/{nitrogen}
+
+    fertilizer string: the amount of fertilizer used in kilograms. Required
+    nitrogen string: the amount of nitrogen in the fertilizer in kilograms. Required
+    Expected response. Code 200 status
+
+    <div class="container">
+        <p class="code"> get calculator/100/100</p>
+        <p class="code"> Response <br> status:	"OK" <br>
+            data:	27300 </p>
+    </div>
+
+
+
+
+    <div class="container">
+        <p class="code"> /api/historic/:year</p>
+    </div>
+
+    <div class="container">
+        <p class="code"> /api/historic/:country/:year</p>
+    </div>
+
+    <div class="container">
+        <p class="code"> /api/historic/range/:yearstart/:yearend</p>
+    </div>
+
+    <div class="container">
+        <p class="code"> /api/historic/range/:country/:yearstart/:yearend</p>
+    </div>
+
+    <div class="footer">
+        <a href="/" class="footer-title-link">
+            <h1 class="footer-title">Fertex API</h1>
+        </a>
+        <a href="/about" class="footer-button">About</a>
+        <a href="/businesses" class="footer-button">For Businesses</a>
+        <a href="/developers" class="footer-button">For Developers</a>
+        <a href="/credits" class="footer-button">Credits</a>
+        <a href="/" class="footer-button">Back to top</a>
+    </div>
+</body>
+</html>

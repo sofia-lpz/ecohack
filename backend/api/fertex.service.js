@@ -5,7 +5,8 @@ const getCalculate = async (fertilizer, nitrogen) => {
     const results = await fertexMysql.getCalculate(fertilizer, nitrogen);
     if (results && results.length > 0) {
       const { EF, GWP } = results[0];
-      return fertilizer * nitrogen * EF * GWP;
+      const calculation = fertilizer * nitrogen * EF * GWP;
+      return parseFloat(calculation.toFixed(4));
     } else {
       throw new Error('No results from database');
     }

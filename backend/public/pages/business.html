@@ -24,7 +24,7 @@
                 <div class="dropdown">
                     <select id="country" name="query">
                         <option value="">--Please choose a country--</option>
-                        <option value="All"> -- ALL COUNTRIES --</option>
+                        <option value="-- ALL COUNTRIES --"> -- ALL COUNTRIES --</option>
                         <option value="Australia">Australia</option>
                         <option value="Austria">Austria</option>
                         <option value="Belarus">Belarus</option>
@@ -154,7 +154,7 @@
                 </div>
             </div>
 
-            <a href="/about" class="button-white">Fetch data</a>
+            <button id="fetchButton" class="button-white">Fetch data</button>
         </div>
         <br>
     </div>
@@ -182,8 +182,15 @@
                 </div>
             </div>
 
-            <a href="/about" class="button-white">Fetch data</a>
+            <button id="calculateButton" class="button-white">Fetch data</button>
+
+            <br>
+            
         </div>
+        <div class="CENTER">
+            <div id="resultcalc" class="resultcalc"></div>
+        </div>
+        
         <br>
     </div>
 
@@ -212,5 +219,7 @@
         <a href="/credits" class="footer-button">Credits</a>
         <a href="/" class="footer-button">Back to top</a>
     </div>
+
+    <script src="./pages/fetchAPI.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ const getCalculate = async (req, res) => {
     res.send({ status: "OK", data: result });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
+    res.status(400).send({ status: "Error", data: error.message });
   }
 }
 
@@ -30,7 +30,7 @@ const getCountryYear = async (req, res) => {
     res.send({ status: "OK", data: historic });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
+    res.status(400).send({ status: "Error", data: error.message });
   }
 }
 
@@ -47,7 +47,7 @@ const getYear = async (req, res) => {
     res.send({ status: "OK", data: historic });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
+    res.status(400).send({ status: "Error", data: error.message });
   }
 }
 
@@ -64,7 +64,7 @@ const getYearRange = async (req, res) => {
     res.send({ status: "OK", data: historic });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
+    res.status(400).send({ status: "Error", data: error.message });
   }
 }
 
@@ -81,7 +81,7 @@ const getCountryYearRange = async (req, res) => {
     res.send({ status: "OK", data: historic });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
+    res.status(400).send({ status: "Error", data: error.message });
   }
 }
 
