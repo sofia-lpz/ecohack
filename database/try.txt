@@ -1,0 +1,6 @@
+conn = mysql.connector.connect(
+    host="echohack.c3coace2uz12.us-east-2.rds.amazonaws.com",
+    user="admin",
+    password="echo123..",
+    database="fertex"
+)
