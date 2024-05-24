@@ -1,9 +1,7 @@
-
-/*blue rgba(84,146,205,255)*/
 :root {
     --blue: rgba(84, 146, 205, 255);
     --white-transparent: rgba(255, 255, 255, 0.95);
-    --blue-transparent:  rgba(84, 146, 205, 0.95);
+    --blue-transparent: rgba(84, 146, 205, 0.95);
     --background: #f1f1f1;
 }
 
@@ -29,9 +27,6 @@ h1 {
     padding: 10px;
     text-align: center;
     color: var(--background);
-
-
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,31 +47,27 @@ p {
 body {
     padding-top: 0px;
     background-color: white;
-
 }
 
-.cloud_body{
+.cloud_body, .darkcloud_body {
     padding-top: 60px;
     background-color: #f1f1f1;
-    background-image: url("../images/bg_white.jpg");
 }
 
-.darkcloud_body{
-    padding-top: 60px;
-    background-color: #f1f1f1;
+.darkcloud_body {
     background-image: url("../images/bg_buildingdark.jpg");
 }
 
 html {
     scroll-behavior: smooth;
-    background-color: rgba(84,146,205,255);
+    background-color: rgba(84, 146, 205, 255);
     padding-top: 100px;
     padding-right: 50px;
     padding-left: 50px;
 }
 
 .header-button {
-    margin-left: 60px; /* Adjust this value to increase or decrease the space */
+    margin-left: 60px;
     font-size: 20px;
     text-align: center;
     color: white;
@@ -89,8 +80,6 @@ html {
     background-color: var(--blue);
     padding: 10px;
     text-align: center;
-    
-
     color: var(--background);
     display: flex;
     flex-direction: row;
@@ -98,14 +87,15 @@ html {
     align-items: center;
 }
 
-.footer-button{
-    margin-left: 60px; /* Adjust this value to increase or decrease the space */
+.footer-button {
+    margin-left: 60px;
     font-size: 20px;
     text-align: center;
     color: white;
 }
 
-.content-title {
+.content-title,
+.content-title-left {
     font-size: 50px;
     font-weight: bold;
     padding-left: 20px;
@@ -113,21 +103,17 @@ html {
 }
 
 .content-title-left {
-    font-size: 50px;
+    margin-left: 50px;
+}
+
+.smallcontent-title {
+    font-size: 30px;
     font-weight: bold;
-    padding-left: 20px;
+    text-align: center;
     color: white;
-    margin-left : 50px;
 }
 
-.smallcontent-title{
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-        color: white;
-}
-
-.content{
+.content {
     margin-top: 100px;
     margin-left: 50px;
     display: flex;
@@ -158,12 +144,13 @@ html {
     align-self: center;
 }
 
-.CENTER{
+.CENTER {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.button-blue{
+
+.button-blue {
     background-color: var(--white-transparent);
     color: var(--blue);
     padding: 10px;
@@ -172,7 +159,7 @@ html {
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 20px;
-    align-self: flex-end;  
+    align-self: flex-end;
 }
 
 .content-text {
@@ -198,21 +185,19 @@ html {
     display: flex;
     width: 100%;
     left: 0;
-
     background-color: var(--blue-transparent);
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-
-.text_content_header{
+.text_content_header {
     margin-top: 50px;
     color: white;
     margin-left: 50px;
 }
 
-.text_content{
+.text_content {
     color: white;
     font-size: 1px;
     margin-right: 400px;
@@ -224,17 +209,15 @@ html {
     display: inline-block;
 }
 
-.dropdown-text{
+.dropdown-text {
     margin-left: 20px;
     position: relative;
     color: white;
-
     font-size: 20px;
-
 }
 
-.row{
-    display:flex;
+.row {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -247,3 +230,9 @@ html {
     align-items: center;
 }
 
+.container {
+    background-color: var(--blue-transparent);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
