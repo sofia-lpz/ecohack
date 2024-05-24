@@ -10,6 +10,9 @@ router.get("/co2/:fertilizer/:kg/", fertexController.getCO2);
 router.get("/historic/:country/:year", fertexController.getCountryYear);
 router.get("/historic/:year", fertexController.getYear);
 
+router.get("/historic/range/:yearstart/:yearend", fertexController.getYearRange);
+router.get("/historic/range/:country/:yearstart/:yearend", fertexController.getCountryYearRange);
+
 router.get('/', (req, res) => {
     res.send('Hello from /api');
   });

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/business.css">
     <title>Home | Fertex</title>
-</head>
-</head>
+
 <body class="darkcloud_body">
     <div>
     <div class="header">
@@ -18,8 +17,12 @@
         <a href="/developers" class="header-button">For Developers</a>
     </div>
 
-    <div class="content">
-        <h1 class="content-title">For your Business</h1>
+    <div class="cola">
+        <h1 class="content-title-left">For your Business</h1>
+    </div>
+    <br>
+    <div>
+        <h1 class="smallcontent-title">See historic emission data in CO<sub>2</sub> equivalent</h1>
     </div>
 
     <div class="row">
@@ -53,6 +56,52 @@
 </div>
 
 
+<a href="/about" class="button-white">Fetch data</a>
+        
+    </div>
+
+
+
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+
+    <div>
+        <h1 class="smallcontent-title">Calculate your N<sub>2</sub> fertilizer emissions</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="row-with-dropdown">
+            <p class="dropdown-text">Enter amount in kg</p>
+            <div class="dropdown">
+                <form id="kg-form">
+                    <input type="number" id="kg" name="kg" step="0.01" min="0">
+                </form>
+            </div>
+        </div>
+
+<div class="row-with-dropdown">
+
+
+    <p class="dropdown-text">Filter by year</p>
+    <div class="dropdown">
+        
+        <select id="country" name="query-mode">
+            <option value="">--Please choose your fertilizer--</option>
+            <option value="mode1">Mode 1</option>
+            <option value="mode2">Mode 2</option>
+            <option value="mode3">Mode 3</option>
+        </select>
+    </div>
+</div>
+
+<a href="/about" class="button-white">Fetch data</a>
         
     </div>
     
@@ -65,9 +114,7 @@
 
 </div>
 
-    <div class="blurb">
-        <h1>Easy to use</h1>
-    </div>
+  
 
 
     <div>

@@ -72,11 +72,72 @@ WHERE year = ?
   }
 }
 
+async function getYearRange(yearstart, yearend)
+{
+  let connection = null
+  try
+  {
+    connection = await connectToDB()
 
+    const query = `SELECT year, SUM(emissionsKTCO2) as total_emissions
+    FROM historicEmissions
+    WHERE year BETWEEN ? AND ?
+    GROUP BY year
+`;
+    const [results, _] = await connection.query(query, [yearstart, yearend])
+
+    console.log(`${results.length} rows returned`)
+    return results
+  }
+  catch(error)
+  {
+    console.log(error)
+  }
+  finally
+  {
+    if(connection !== null)
+    {
+      connection.end()
+      console.log('Connection closed successfully')
+    }
+  }
+}
+
+async function getCountryYearRange(country, yearstart, yearend)
+{
+  let connection = null
+  try
+  {
+    connection = await connectToDB()
+
+    const query = `SELECT emissionsKTCO2 as total_emissions
+FROM historicEmissions
+WHERE country = ? AND year BETWEEN ? AND ?
+`;
+    const [results, _] = await connection.query(query, [country, yearstart, yearend])
+
+    console.log(`${results.length} rows returned`)
+    return results
+  }
+  catch(error)
+  {
+    console.log(error)
+  }
+  finally
+  {
+    if(connection !== null)
+    {
+      connection.end()
+      console.log('Connection closed successfully')
+    }
+  }
+}
 
 export {
   getCountryYear,
-  getYear
+  getYear,
+  getYearRange,
+  getCountryYearRange
 };
 
 

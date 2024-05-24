@@ -39,8 +39,28 @@ const getYear = async (year) => {
   }
 }
 
+const getYearRange = async (yearstart, yearend) => {
+  try {
+    const historic = await fertexMysql.getYearRange(yearstart, yearend);
+    return historic;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+const getCountryYearRange = async (country, yearstart, yearend) => {
+  try {
+    const historic = await fertexMysql.getCountryYearRange(country, yearstart, yearend);
+    return historic;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 export {
   getCO2,
   getCountryYear,
-  getYear
+  getYear,
+  getYearRange,
+  getCountryYearRange
 };

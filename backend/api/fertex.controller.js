@@ -51,8 +51,45 @@ const getYear = async (req, res) => {
   }
 }
 
+const getYearRange = async (req, res) => {
+  const {
+    params: { yearstart, yearend },
+  } = req;
+  if (!yearstart || !yearend) {
+    return;
+  }
+
+  try {
+    const historic = await fertexService.getYearRange(yearstart, yearend);
+    res.send({ status: "OK", data: historic });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ status: "Error", data: error.message });
+  }
+}
+
+const getCountryYearRange = async (req, res) => {
+  const {
+    params: { country, yearstart, yearend },
+  } = req;
+  if (!country || !yearstart || !yearend) {
+    return;
+  }
+
+  try {
+    const historic = await fertexService.getCountryYearRange(country, yearstart, yearend);
+    res.send({ status: "OK", data: historic });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ status: "Error", data: error.message });
+  }
+}
+
 export {
   getCO2,
   getCountryYear,
-  getYear
+  getYear,
+  getYearRange,
+  getCountryYearRange
+
 };
