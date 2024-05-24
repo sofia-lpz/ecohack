@@ -1,42 +1,4 @@
 import * as fertexMysql from './fertex.mysql.js'
-import * as fertexJson from './fertex.json.js'
-
-const getCarreras = async () => {
-  try {
-    const carreras = await pronosMysql.getCarreras();
-    return carreras;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const getAlumno = async (matricula) => {
-  try {
-    const alumno = await pronosMysql.getAlumno(matricula);
-    return alumno;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const getAlumnoActual = async (matricula) => {
-  try {
-    const alumno = await pronosMysql.getAlumnoActual(matricula);
-    return alumno;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const getCarreraSemestre = async (carrera, semestre) => {
-  try {
-    const carreraSemestre = await pronosMysql.getCarreraSemestre(carrera, semestre);
-    return carreraSemestre;
-  } catch (err) {
-    console.error(err);
-  }
-}
-
 
 
 const getCO2 = async (fertilizer, kg) => {
@@ -59,6 +21,26 @@ const getCO2 = async (fertilizer, kg) => {
   }
 }
 
+const getCountryYear = async (country, year) => {
+  try {
+    const historic = await fertexMysql.getCountryYear(country, year);
+    return historic;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+const getYear = async (year) => {
+  try {
+    const historic = await fertexMysql.getYear(year);
+    return historic;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 export {
-getCO2
+  getCO2,
+  getCountryYear,
+  getYear
 };

@@ -2,82 +2,28 @@ import mysql from "mysql2/promise"
 
 //MISSING QUERIES FOR THE FUNCTIONS, BECAUSE OF PENDING VIEWS
 
-async function connectToDB()
-{
-  return await  mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
+async function connectToDB() {
+  return await mysql.createConnection({
+    host: "echohack.c3coace2uz12.us-east-2.rds.amazonaws.com",
+    user: "admin",
+    password: "echo123..",
+    database: "fertex"
   });
 }
 
-async function getCarreras()
-{
-  let connection = null;
-  try
-  {
-    connection = await connectToDB()
 
-    const [results, _] = await connection.query('SELECT carrera from programa')
 
-    console.log(`${results.length} rows returned`)
-    return results
-  }
-  catch(error)
-  {
-    console.log(error)
-  }
-  finally
-  {
-    if(connection !== null)
-    {
-      connection.end()
-      console.log('Connection closed successfuly')
-    }
-  }
-}
-
-async function getAlumno(matricula)
+async function getCountryYear(country, year)
 {
   let connection = null
   try
   {
     connection = await connectToDB()
 
-    const query = `
-    `;
+    const query = `SELECT emissionsKTCO2 FROM historicEmissions WHERE country = ? AND year = ?
+`;
 
-    const [results, _] = await connection.query(query, [matricula])
-
-    console.log(`${results.length} rows returned`)
-    return results
-  }
-  catch(error)
-  {
-    console.log(error)
-  }
-  finally
-  {
-    if(connection !== null)
-    {
-      connection.end()
-      console.log('Connection closed successfuly')
-    }
-  }
-}
-
-async function getCarreraSemestre(carrera, semestre)
-{
-  let connection = null
-  try
-  {
-    connection = await connectToDB()
-
-    const query = `
-    `;
-
-    const [results, _] = await connection.query(query, [carrera, semestre])
+    const [results, _] = await connection.query(query, [country, year])
 
     console.log(`${results.length} rows returned`)
     return results
@@ -96,16 +42,18 @@ async function getCarreraSemestre(carrera, semestre)
   }
 }
 
-async function getAlumnoActual(matricula)
+async function getYear(year)
 {
   let connection = null
   try
   {
     connection = await connectToDB()
 
-    const query = `
-    `;
-    const [results, _] = await connection.query(query, [matricula])
+    const query = `SELECT SUM(emissionsKTCO2) as total_emissions
+FROM historicEmissions
+WHERE year = ?
+`;
+    const [results, _] = await connection.query(query, [year])
 
     console.log(`${results.length} rows returned`)
     return results
@@ -119,16 +67,16 @@ async function getAlumnoActual(matricula)
     if(connection !== null)
     {
       connection.end()
-      console.log('Connection closed successfuly')
+      console.log('Connection closed successfully')
     }
   }
 }
 
+
+
 export {
-  getCarreras,
-  getAlumno,
-  getCarreraSemestre,
-  getAlumnoActual
+  getCountryYear,
+  getYear
 };
 
 

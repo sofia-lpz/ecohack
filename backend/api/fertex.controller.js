@@ -1,69 +1,5 @@
 import * as fertexService from './fertex.service.js'
 
-const getCarreras = async (req, res) => {
-  try {
-    const carreras = await pronosService.getCarreras();
-    res.send({ status: "OK", data: carreras });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({ status: "Error", data: error.message});
-  }
-};
-
-const getAlumno = async (req, res) => {
-
-  const {
-    params: { matricula },
-  } = req;
-  if (!matricula) {
-    return;
-  }
-
-  try {
-    const alumno = await pronosService.getAlumno(matricula);
-    res.send({ status: "OK", data: alumno });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
-  }
-};
-
-
-const getAlumnoActual = async (req, res) => {
-  const {
-    params: { matricula },
-  } = req;
-  if (!matricula) {
-    return;
-  }
-
-  try {
-    const alumno = await pronosService.getAlumnoActual(matricula);
-    res.send({ status: "OK", data: alumno });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({ status: "Error", data: error.message });
-  }
-}
-
-const getCarreraSemestre = async (req, res) => {
-  const {
-    params: { carrera, semestre },
-  } = req;
-  if (!carrera || !semestre) {
-    return;
-  }
-
-  try {
-    const pronostico = await pronosService.getCarreraSemestre(carrera, semestre);
-    res.send({ status: "OK", data: pronostico });
-  }
-catch(error){
-  console.error(error);
-  res.status(500).send({ status: "Error", data: error.message });
-}
-};
-
 const getCO2 = async (req, res) => {
   const {
     params: { fertilizer, kg },
@@ -81,6 +17,42 @@ const getCO2 = async (req, res) => {
   }
 }
 
+const getCountryYear = async (req, res) => {
+  const {
+    params: { country, year },
+  } = req;
+  if (!country || !year) {
+    return;
+  }
+
+  try {
+    const historic = await fertexService.getCountryYear(country, year);
+    res.send({ status: "OK", data: historic });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ status: "Error", data: error.message });
+  }
+}
+
+const getYear = async (req, res) => {
+  const {
+    params: { year },
+  } = req;
+  if (!year) {
+    return;
+  }
+
+  try {
+    const historic = await fertexService.getYear(year);
+    res.send({ status: "OK", data: historic });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ status: "Error", data: error.message });
+  }
+}
+
 export {
-  getCO2
+  getCO2,
+  getCountryYear,
+  getYear
 };
