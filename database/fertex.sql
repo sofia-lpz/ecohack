@@ -4,10 +4,9 @@ USE fertex;
 
 CREATE TABLE fertilizer (
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    N INT NOT NULL,
-    PCG INT NOT NULL,
-    gases VARCHAR(255) NOT NULL,
+    name VARCHAR(255),
+    emissionFactor FLOAT,
+    gases VARCHAR(255),
     PRIMARY KEY (id)
 );
 
@@ -19,12 +18,14 @@ CREATE TABLE historicEmissions (
     country VARCHAR(255)
 );
 
+create table emissionFactor{
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    emissionFactor FLOAT,
+    gases VARCHAR(255)
+};
+}
 
--- Inserting data into the fertilizer table
-INSERT INTO fertilizer (name, N, PCG, gases) VALUES
-('Fertilizer A', 20, 30, 'CO2'),
-('Fertilizer B', 25, 35, 'N2O'),
-('Fertilizer C', 30, 40, 'CH4');
 
 -- Inserting data into the historicEmissions table
 INSERT INTO historicEmissions (year, emissionsKTCO2, country) VALUES

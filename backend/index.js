@@ -46,9 +46,9 @@ app.get('/', (req, res)=>
         })
     })
   
-    app.get('/buisnesses', (req, res)=>
+    app.get('/business', (req, res)=>
     {
-        fs.readFile('./public/pages/buisnesses.html', 'utf8', 
+        fs.readFile('./public/pages/business.html', 'utf8', 
         (err, html) => {
             if(err)
             {
