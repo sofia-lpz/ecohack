@@ -2,6 +2,7 @@
     --blue: rgba(84, 146, 205, 255);
     --white-transparent: rgba(255, 255, 255, 0.95);
     --blue-transparent: rgba(84, 146, 205, 0.95);
+    --dark-blue: rgba(14,63,132,255);
     --black-transparent: rgba(0, 0, 0, 0.60);
     --background: #f1f1f1;
 }
@@ -48,6 +49,11 @@ p {
 body {
     padding-top: 0px;
     background-color: white;
+}
+
+.blue-body{
+    background-color: var(--dark-blue);
+
 }
 
 .cloud_body, .darkcloud_body {
@@ -256,4 +262,75 @@ html {
     color: white;
     font-weight: bold;
     font-family: courier;
+}
+
+.endpoint-header{
+    margin-left: 70px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.endpoint-req-container-blue {
+    display: inline-block;
+    background-color: rgb(83, 85, 237);
+    color: white;
+    padding: 10px;
+    margin-left: 50px;
+    border: none;
+    font-weight: bold;
+    
+    align-self: flex-end;
+    border-radius: 20px;
+}
+
+.endpoint-req-container-green {
+    display: inline-block;
+    background-color: rgb(168, 237, 83);
+    color: black;
+    padding: 10px;
+    margin-left: 50px;
+    border: none;
+
+    font-weight: bold;
+
+    align-self: flex-end;
+    border-radius: 20px;
+}
+
+.endpoint-req-container-pink {
+    display: inline-block;
+    background-color: rgb(237, 104, 104);
+    color: white;
+    padding: 10px;
+    margin-left: 50px;
+    border: none;
+
+    font-weight: bold;
+
+    align-self: flex-end;
+    border-radius: 20px;
+}
+
+.endpoint-text{
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+    padding: 0px;
+}
+
+.response-title{
+    display: inline-block;
+    margin-left: 50px;
+    color: white;
+    padding: 0px;
+    margin-bottom: -10px;
+}
+
+.button-white:hover {
+    background-color: rgba(84, 146, 205, 0.75); /* Darker blue-transparent */
+}
+
+.button-blue:hover {
+    background-color: rgba(255, 255, 255, 0.75); /* Darker white-transparent */
 }

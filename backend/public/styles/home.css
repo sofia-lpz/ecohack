@@ -184,3 +184,11 @@ html {
     font-size: 1px;
     margin-right: 400px;
 }
+
+.button-white:hover {
+    background-color: rgba(84, 146, 205, 0.75); /* Darker blue-transparent */
+}
+
+.button-blue:hover {
+    background-color: rgba(255, 255, 255, 0.75); /* Darker white-transparent */
+}

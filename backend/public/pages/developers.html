@@ -6,7 +6,7 @@
     <title>Home | Fertex</title>
     <link rel="stylesheet" href="./styles/developers.css">
 </head>
-<body class="darkcloud_body">
+<body class="blue-body">
     <div class="header">
         <a href="/" class="header-title-link">
             <h1 class="header-title">Fertex API</h1>
@@ -16,43 +16,142 @@
         <a href="/developers" class="header-button">For Developers</a>
     </div>
 
-    <div class="container">
-        <p class="code"> /api/calculate/:fertilizer/:nitrogen</p>
-    </div>
-
-
-
-    request:
-    get /calcuator/{fertilizer}/{nitrogen}
-
-    fertilizer string: the amount of fertilizer used in kilograms. Required
-    nitrogen string: the amount of nitrogen in the fertilizer in kilograms. Required
-    Expected response. Code 200 status
+    <br>
+    <br>
+    
+    <div class="endpoint-header"> Calculator Endpoint </div>
 
     <div class="container">
-        <p class="code"> get calculator/100/100</p>
-        <p class="code"> Response <br> status:	"OK" <br>
-            data:	27300 </p>
+        <p class="code">GET /api/calculator/{fertilizer}/{nitrogen}</p>
     </div>
 
+    <div class="endpoint-req-container-blue">Fertilizer float</div>
 
+    <p class="endpoint-text">Required: Kilograms of fertilizer</p>
+    
+    <br>
+    
+    <div class="endpoint-req-container-green">Nitrogen int</div>
 
+    <p class="endpoint-text">Required: Nitrogen percentage in the fertilizer per kilogram</p>
+
+    <br>
+    <p class="response-title">Expected Response:</p>
 
     <div class="container">
-        <p class="code"> /api/historic/:year</p>
+        <p class="code"> status:	"OK" <br>
+            data:	{float} </p>
     </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="endpoint-header"> Year Emission Endpoint </div>
 
     <div class="container">
-        <p class="code"> /api/historic/:country/:year</p>
+        <p class="code">GET /api/historic/{year}</p>
     </div>
 
-    <div class="container">
-        <p class="code"> /api/historic/range/:yearstart/:yearend</p>
-    </div>
+    <div class="endpoint-req-container-pink">Year int</div>
+
+    <p class="endpoint-text">Required: Year of query in format like {2024}</p>
+    <br>
+    <p class="response-title">Expected Response:</p>
 
     <div class="container">
-        <p class="code"> /api/historic/range/:country/:yearstart/:yearend</p>
+        <p class="code"> status:	"OK" <br>
+            data:	{float} </p>
     </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="endpoint-header"> Country Year Emission Endpoint </div>
+
+    <div class="container">
+        <p class="code">GET /api/historic/{country}/{year}</p>
+    </div>
+
+    <div class="endpoint-req-container-blue">Country string</div>
+
+    <p class="endpoint-text">Required: Name of the country</p>
+    
+    <br>
+    
+    <div class="endpoint-req-container-green">Year int</div>
+
+    <p class="endpoint-text">Required: Year of query in format like {2024}</p>
+
+    <br>
+    <p class="response-title">Expected Response:</p>
+
+    <div class="container">
+        <p class="code"> status:	"OK" <br>
+            data:	{float} </p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="endpoint-header"> Year Range Emission Endpoint </div>
+
+    <div class="container">
+        <p class="code">GET /api/historic/range/{yearstart}/{yearend}</p>
+    </div>
+
+    <div class="endpoint-req-container-pink">Year Start int</div>
+
+    <p class="endpoint-text">Required: Start year of query in format like {2020}</p>
+    
+    <br>
+    
+    <div class="endpoint-req-container-blue">Year End int</div>
+
+    <p class="endpoint-text">Required: End year of query in format like {2024}</p>
+
+    <br>
+    <p class="response-title">Expected Response:</p>
+
+    <div class="container">
+        <p class="code"> status:	"OK" <br>
+            data:	{list of float} </p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="endpoint-header"> Country Year Range Emission Endpoint </div>
+
+    <div class="container">
+        <p class="code">GET /api/historic/range/{country}/{yearstart}/{yearend}</p>
+    </div>
+
+    <div class="endpoint-req-container-green">Country string</div>
+
+    <p class="endpoint-text">Required: Name of the country</p>
+    
+    <br>
+    
+    <div class="endpoint-req-container-pink">Year Start int</div>
+
+    <p class="endpoint-text">Required: Start year of query in format like {2020}</p>
+
+    <br>
+    
+    <div class="endpoint-req-container-blue">Year End int</div>
+
+    <p class="endpoint-text">Required: End year of query in format like {2024}</p>
+
+    <br>
+    <p class="response-title">Expected Response:</p>
+
+    <div class="container">
+        <p class="code"> status:	"OK" <br>
+            data:	{list of float} </p>
+    </div>
+    <br>
+    <br>
+    <br>
 
     <div class="footer">
         <a href="/" class="footer-title-link">
