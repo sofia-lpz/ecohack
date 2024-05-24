@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Fertex</title>
+    <title>Developers | Fertex</title>
     <link rel="stylesheet" href="./styles/developers.css">
 </head>
 <body class="blue-body">
@@ -59,8 +59,8 @@
     <p class="response-title">Expected Response:</p>
 
     <div class="container">
-        <p class="code"> status:	"OK" <br>
-            data:	{float} </p>
+        <p class="code"> status: "OK" <br>
+            "data:[{"total_emissions": total_emissions_from_all_countries}] </p>
     </div>
     <br>
     <br>
@@ -87,7 +87,7 @@
 
     <div class="container">
         <p class="code"> status:	"OK" <br>
-            data:	{float} </p>
+            "data":[{"emissionsKTCO2": total_emissions_in_year_from_country}] </p>
     </div>
     <br>
     <br>
@@ -114,7 +114,9 @@
 
     <div class="container">
         <p class="code"> status:	"OK" <br>
-            data:	{list of float} </p>
+            "data":[{"year":year_start__range,"total_emissions":emissions_year_from_all_country}, <br>
+            ...,
+            <br>{"year":year_final__range,"total_emissions":emissions_year_from_all_country}] </p>
     </div>
     <br>
     <br>
@@ -147,7 +149,9 @@
 
     <div class="container">
         <p class="code"> status:	"OK" <br>
-            data:	{list of float} </p>
+            data":[{"year":year_start__range,"total_emissions":emissions_year_from_country}, <br>
+            ...,
+            <br>{"year":year_final__range,"total_emissions":emissions_year_from_country}] </p>
     </div>
     <br>
     <br>
@@ -158,10 +162,10 @@
             <h1 class="footer-title">Fertex API</h1>
         </a>
         <a href="/about" class="footer-button">About</a>
-        <a href="/businesses" class="footer-button">For Businesses</a>
+        <a href="/business" class="footer-button">For Businesses</a>
         <a href="/developers" class="footer-button">For Developers</a>
         <a href="/credits" class="footer-button">Credits</a>
-        <a href="/" class="footer-button">Back to top</a>
+        <a href="/developers" class="footer-button">Back to top</a>
     </div>
 </body>
 </html>

@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.setAttribute('href', url);
-    a.setAttribute('download', 'data.csv');
+    a.setAttribute('download', 'fertex-data.csv');
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
